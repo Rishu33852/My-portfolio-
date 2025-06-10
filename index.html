@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Intro Overlay -->
+<!-- Fullscreen Intro Overlay -->
 <div id="intro-wrapper">
   <video id="introVideo" autoplay muted playsinline>
     <source src="intro.mp4" type="video/mp4">
@@ -92,12 +92,12 @@
     intro.classList.add('fade-out');
   };
 
-  // Optional: Skip if video fails or delays
+  // Fallback: skip after 10s in case video doesn't end
   setTimeout(() => {
     if (!intro.classList.contains('fade-out')) {
       intro.classList.add('fade-out');
     }
-  }, 10000); // fallback after 10 seconds
+  }, 10000);
 </script>
   
 </body>
