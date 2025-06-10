@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Intro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      background-color: black;
       overflow: hidden;
-      background: black;
     }
 
-    video {
+    #introVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      object-position: center;
+      z-index: 9999;
     }
   </style>
 </head>
@@ -26,15 +33,14 @@
   </video>
 
   <script>
-    const introVideo = document.getElementById("introVideo");
-
-    introVideo.onended = () => {
-      window.location.href = "mainpage.html";
+    const video = document.getElementById('introVideo');
+    video.onended = () => {
+      window.location.href = 'mainpage.html';
     };
 
-    // Optional: Auto-skip after 10 seconds (if video stuck)
+    // Fallback if video doesn't end
     setTimeout(() => {
-      window.location.href = "mainpage.html";
+      window.location.href = 'mainpage.html';
     }, 10000);
   </script>
 
