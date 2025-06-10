@@ -58,5 +58,23 @@
 <!-- Bottom Margin -->
 <div id="bottom-margin"></div>
 
+  <script>
+  window.addEventListener('load', () => {
+    const video = document.querySelector('.back-video');
+    const tryPlay = () => {
+      video.muted = true; // Make sure it's muted
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Retry after short delay if it fails
+          setTimeout(tryPlay, 500);
+        });
+      }
+    };
+    tryPlay();
+  });
+</script>
+
 </body>
 </html>
