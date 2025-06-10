@@ -84,5 +84,21 @@
   });
 </script>
 
+  <script>
+  const intro = document.getElementById('intro-wrapper');
+  const video = document.getElementById('introVideo');
+
+  video.onended = () => {
+    intro.classList.add('fade-out');
+  };
+
+  // Optional: Skip if video fails or delays
+  setTimeout(() => {
+    if (!intro.classList.contains('fade-out')) {
+      intro.classList.add('fade-out');
+    }
+  }, 10000); // fallback after 10 seconds
+</script>
+  
 </body>
 </html>
