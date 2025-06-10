@@ -236,3 +236,12 @@ border-radius: 50%;
     pointer-events: none;
   }
 }
+
+   /* Hide everything in portrait mode */
+body.portrait #intro-wrapper {
+  display: none !important;
+}
+body.portrait .back-video,
+body.portrait #main-content {
+  display: block;
+}
