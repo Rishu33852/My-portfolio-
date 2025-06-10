@@ -24,6 +24,7 @@
 
 <!-- Pages -->
 <div class="centering-divs">
+  <div id="main-content">
   <a href="Thumbnails.html">See Thumbnails</a>
   <a href="PFPs.html">See PFPs</a>
   <a href="Banners.html">See Banners</a>
@@ -85,19 +86,37 @@
 </script>
 
   <script>
-  const intro = document.getElementById('intro-wrapper');
-  const video = document.getElementById('introVideo');
+  const introWrapper = document.getElementById('intro-wrapper');
+  const introVideo = document.getElementById('introVideo');
+  const body = document.body;
 
-  video.onended = () => {
-    intro.classList.add('fade-out');
-  };
+  // Detect orientation
+  function checkOrientation() {
+    const landscape = window.innerWidth > window.innerHeight;
 
-  // Fallback: skip after 10s in case video doesn't end
-  setTimeout(() => {
-    if (!intro.classList.contains('fade-out')) {
-      intro.classList.add('fade-out');
+    if (!landscape) {
+      // If portrait, skip intro
+      body.classList.add('portrait');
+      introWrapper.style.display = 'none';
+    } else {
+      body.classList.remove('portrait');
+
+      // Allow audio and play video properly
+      introVideo.muted = false;
+      introVideo.play().catch(() => {
+        // fallback in case autoplay fails
+        introVideo.muted = true;
+        introVideo.play();
+      });
+
+      introVideo.onended = () => {
+        introWrapper.classList.add('fade-out');
+      };
     }
-  }, 10000);
+  }
+
+  checkOrientation();
+  window.addEventListener("resize", checkOrientation);
 </script>
   
 </body>
