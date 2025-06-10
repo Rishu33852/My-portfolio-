@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="intro.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const introVideo = document.getElementById("introVideo");
+
+    introVideo.onended = () => {
+      window.location.href = "mainpage.html";
+    };
+
+    // Optional: Auto-skip after 10 seconds (if video stuck)
+    setTimeout(() => {
+      window.location.href = "mainpage.html";
+    }, 10000);
+  </script>
+
+</body>
+</html>
