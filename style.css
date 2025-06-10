@@ -194,5 +194,33 @@ border-radius: 50%;
     object-fit: cover;
     z-index: -1;
   }
-  
+
+  #intro-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#intro-wrapper video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+  }
   
