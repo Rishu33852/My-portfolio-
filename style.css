@@ -222,13 +222,12 @@ border-radius: 50%;
 }
 
   .thumb {
-  display: block;
-  margin: 20px auto;
-  width: 90vw;
-  max-width: 500px;
-                      /* Only slight rounding */
-  aspect-ratio: 16 / 9;        /* For thumbnails */
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
+  display : block ;
+  margin-top : 0px ;
+  margin-left : auto ;
+  margin-right : auto ;
+  z-index : -1 ;
+  width : 90vw ;
+  visibility : hidden ;
+  }
   
