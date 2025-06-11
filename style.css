@@ -194,5 +194,33 @@ border-radius: 50%;
     object-fit: cover;
     z-index: -1;
   }
+
+  /* Mobile First (default) — already handled */
+
+@media screen and (min-width: 768px) {
+  * {
+    font-size: 18px;
+  }
+
+  .para {
+    font-size: 28px;
+    margin-left: 40px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .imgs, #identity {
+    width: 500px;
+    height: 500px;
+  }
+
+  button {
+    height: 60px;
+    width: 180px;
+    font-size: 16px;
+  }
+}
   
   
