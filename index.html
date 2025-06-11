@@ -83,6 +83,15 @@
 <!--Bottom Margin-->
 <div id="bottom-margin"> </div>
 
+  <script>
+  window.addEventListener('load', function () {
+    var video = document.querySelector('.back-video');
+    video.muted = true; // ensure muted
+    video.play().catch(function (error) {
+      console.log('Autoplay error:', error);
+    });
+  });
+</script>
 
 
 </body>
