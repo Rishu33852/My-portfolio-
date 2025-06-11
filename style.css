@@ -73,12 +73,10 @@ a {
 
 .imgs {
   border-radius: 50% ;
-  display : circle ;
-  margin-top : 0px ;
-  margin-left : auto ;
-  margin-right : auto ;
-  z-index : -1 ;
+  display : block ;
+  margin : 0 auto;
   width : 80vw ;
+  max-width : 300px;
   visibility : visible ;
 }
 
