@@ -224,8 +224,8 @@ border-radius: 50%;
   .thumb {
   display: block;
   margin: 20px auto;
-  width: 100vw;
-  max-width: 400px;
+  width: 90vw;
+  max-width: 500px;
   border-radius: 20px;         /* Only slight rounding */
   aspect-ratio: 16 / 9;        /* For thumbnails */
   object-fit: cover;
